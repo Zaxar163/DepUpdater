@@ -1,0 +1,21 @@
+plugins {
+	id 'java'
+	id 'eclipse'
+	id 'idea'
+}
+
+String mainClassName = "ru.zaxar163.repupdater.Main"
+
+repositories {
+	mavenCentral()
+	jcenter()
+}
+
+dependencies {
+	compile group: 'org.gitlab4j', name: 'gitlab4j-api', version: '4.12.5'
+}
+
+jar {
+	manifest.attributes("Main-Class": mainClassName)
+	from { configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } }
+}
