@@ -1,0 +1,3 @@
+# DepUpdater
+Simple update your gitlab repos...
+Build via `./gradlew build` and run jar in `/build/libs` to get help.
