@@ -28,7 +28,6 @@ public class Main {
     			} else {
     				pb.command("git", "clone", e.getSshUrlToRepo(), e.getName());
         			pb.directory(group.toFile());
-        			Thread.sleep(1000);
     			}
     			pb.inheritIO();
     			pb.start().waitFor();
